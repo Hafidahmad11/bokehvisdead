@@ -2,7 +2,7 @@ import pandas as pd
 import yfinance as yf
 
 from bokeh.io import curdoc
-from bokeh.models import ColumnDataSource, Select, DataTable, TableColumn
+from bokeh.models import ColumnDataSource, Select, DataTable, TableColumn, Tabs, Panel
 from bokeh.layouts import column, row
 from bokeh.plotting import figure, show
 
