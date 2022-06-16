@@ -82,13 +82,13 @@ def ticker2_change(attrname, old, new):
     update()
 
 
-def update():
+def update(selected=None):
     t1, t2 = ticker1.value, ticker2.value
     df = get_data(t1, t2)
     source.data = df
     stats_source.data = round(df.describe().reset_index(), 2)
     corr.title.text = "%s returns vs. %s returns" % (t1, t2)
-    ts1.title.text = ts2.title.text = t1, t2
+    ts1.title.text, ts2.title.text = t1, t2
 
 
 ticker1.on_change('value', ticker1_change)
@@ -99,6 +99,8 @@ widgets = column(ticker1, ticker2, data_table)
 main_row = row(corr, widgets)
 series = column(ts1, ts2)
 layout = column(main_row, series)
+
+update()
 
 curdoc().add_root(layout)
 curdoc().title = "Stock Dashboard"
