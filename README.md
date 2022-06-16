@@ -11,8 +11,7 @@ Saham merupakan salah satu instrumen pasar keuangan yang paling popular. Menerbi
 
 Saham dapat didefinisikan sebagai tanda penyertaan modal seseorang atau pihak (badan usaha) dalam suatu perusahaan atau perseroan terbatas. Dengan menyertakan modal tersebut, maka pihak tersebut memiliki klaim atas pendapatan perusahaan, klaim atas aset perusahaan, dan berhak hadir dalam Rapat Umum Pemegang Saham (RUPS).
 
-
-
+Program ini akan memanfaatkan fitur-fitur yang tersedia pada Bokeh Library untuk memaksimalkan visualisasi data yang didapatkan.
 Data yang dipakai
 - Apple Inc. 
 - Alphabet Inc.
@@ -21,6 +20,17 @@ Data yang dipakai
 - Tesla, Inc.
 
 Saham-saham yang dipilih berasal dari berbagai sektor dan kapitalisasi pasar. Untuk bagian ini, data nya di kita set dari DEFALUT_TICKERS yang isi parameternya itu saham - saham tersebut.
+
+
+# Getting Started
+Berikut ini merupakan program yang menampilkan trend saham dari berbagai pasar saham berdasarkan data close dengan menggunakan Bokeh Library untuk memudahkan proses visualisasi data.
+
+# Prequisites
+
+
+
+
+
 
 
 
