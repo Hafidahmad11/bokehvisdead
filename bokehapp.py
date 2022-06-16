@@ -90,13 +90,41 @@ def update(selected=None):
     corr.title.text = "%s returns vs. %s returns" % (t1, t2)
     ts1.title.text, ts2.title.text = t1, t2
 
+    
+    
+def set_style(p):
+    # Tick labels
+    p.xaxis.major_label_text_font_size = '6pt'
+    p.yaxis.major_label_text_font_size = '10pt'
+
+ts1 = figure(width=700, height=250, tools=tools,
+             x_axis_type="datetime", active_drag="xbox_select")
+
+ts1.line("Date", "t1", source=source)
+ts1.circle("Date", "t1", size=1, source=source,
+           color=None, selection_color="firebrick")
+tab1 = Panel(child=ts1, title = "tab1")
+
+ts2 = figure(width=700, height=250, tools=tools,
+             x_axis_type="datetime", active_drag="xbox_select")
+ts2.x_range = ts1.x_range
+ts2.line("Date", "t2", source=source)
+ts2.circle("Date", "t2", size=1, source=source,
+           color=None, selection_color="firebrick")
+tab2 = Panel(child=ts2, title="tab2")
+
+tabs = Tabs(tabs=[tab1, tab2])
+
+set_style(ts1)
+set_style(ts2)    
+    
 
 ticker1.on_change('value', ticker1_change)
 ticker2.on_change('value', ticker2_change)
 
 
 widgets = column(ticker1, ticker2, data_table)
-main_row = row(corr, widgets)
+main_row = row(corr, widgets, tabs)
 series = column(ts1, ts2)
 layout = column(main_row, series)
 
