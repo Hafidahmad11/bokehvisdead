@@ -6,7 +6,7 @@ Kelompok 4
 - Azrina Fazira A ( 1301194241 )
 - Hafid Ahmad Adyatma ( 1301194235 )
 
-# Visualization in Finance
+## Visualization in Finance
 Saham merupakan salah satu instrumen pasar keuangan yang paling popular. Menerbitkan saham merupakan salah satu pilihan perusahaan ketika memutuskan untuk pendanaan perusahaan. Pada sisi lain, saham merupakan instrumen investasi yang banyak dipilih oleh para investor karena saham mampu memberikan tingkat keuntungan yang menarik.
 
 Saham dapat didefinisikan sebagai tanda penyertaan modal seseorang atau pihak (badan usaha) dalam suatu perusahaan atau perseroan terbatas. Dengan menyertakan modal tersebut, maka pihak tersebut memiliki klaim atas pendapatan perusahaan, klaim atas aset perusahaan, dan berhak hadir dalam Rapat Umum Pemegang Saham (RUPS).
@@ -22,18 +22,18 @@ Data yang dipakai
 Saham-saham yang dipilih berasal dari berbagai sektor dan kapitalisasi pasar. Untuk bagian ini, data nya di kita set dari DEFALUT_TICKERS yang isi parameternya itu saham - saham tersebut.
 
 
-# Getting Started
+## Getting Started
 Berikut ini merupakan program yang menampilkan trend saham dari berbagai pasar saham berdasarkan data close dengan menggunakan Bokeh Library untuk memudahkan proses visualisasi data.
 Kita disini menggunakan yfinance untuk download Financial data. yfinance adalah paket/package yang dirancang untuk mengunduh data stok historis dari Yahoo Finance.
 
-# Prequisites
+## Prequisites
 Langkah utama yaitu menginstall library yang di butuhkan seperti :
 ```
 pip install pandas
 pip install bokeh
 pip install yfinance
 ```
-# Installing
+## Installing
 Langkah selanjutnya import librarynya
 
 ```
@@ -46,7 +46,7 @@ from bokeh.layouts import column, row
 from bokeh.plotting import figure, show
 ```
 
-# Handle Dataset
+## Handle Dataset
 membuat dataset atau memuat dataset yang diperlukan untuk di visualisasikan
 
 ```
@@ -189,6 +189,6 @@ curdoc().title = "Stock Dashboard"
 
 
 
-
+# THANKS
 
 
