@@ -23,10 +23,6 @@ def get_data(t1, t2):
     df = load_ticker(tickers)
     returns = df.pct_change().add_suffix("_returns")
     data = pd.concat([df, returns], axis=1)
-    data['t1'] = data[t1]
-    data['t2'] = data[t2]
-    data['t1_returns'] = data[t1+'_returns']
-    data['t2_returns'] = data[t2+'_returns']
     return data
 #     d = load_ticker(DEFAULT_TICKERS)
 #     df = d[[t1, t2]]
