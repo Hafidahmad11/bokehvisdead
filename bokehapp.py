@@ -48,8 +48,8 @@ data_table = DataTable(source=stats_source, columns=stat_columns,
                        width=350, height=350, index_position=None)
 
 # Plots
-corr_tools = "pan, wheel_zoom, box_select, reset"
-tools = "pan, wheel_zoom, xbox_select, reset"
+corr_tools = "pan, wheel_zoom, box_select,zoom_in,zoom_out,save, reset"
+tools = "pan, wheel_zoom, xbox_select,zoom_in,zoom_out,save, reset"
 
 corr = figure(width=350, height=350, tools=corr_tools)
 corr.circle("t1_returns", "t2_returns", size=2, source=source,
