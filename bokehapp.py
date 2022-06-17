@@ -19,13 +19,22 @@ def load_ticker(tickers):
 
 
 def get_data(t1, t2):
-    d = load_ticker(DEFAULT_TICKERS)
-    df = d[[t1, t2]]
+    tickers = [t1, t2]
+    df = load_ticker(tickers)
     returns = df.pct_change().add_suffix("_returns")
-    df = pd.concat([df, returns], axis=1)
-    df.rename(columns={t1: "t1", t2: "t2", t1 +
-              "_returns": "t1_returns", t2+"_returns": "t2_returns"}, inplace=True)
-    return df.dropna()
+    data = pd.concat([df, returns], axis=1)
+    data['t1'] = data[t1]
+    data['t2'] = data[t2]
+    data['t1_returns'] = data[t1+'_returns']
+    data['t2_returns'] = data[t2+'_returns']
+    return data
+#     d = load_ticker(DEFAULT_TICKERS)
+#     df = d[[t1, t2]]
+#     returns = df.pct_change().add_suffix("_returns")
+#     df = pd.concat([df, returns], axis=1)
+#     df.rename(columns={t1: "t1", t2: "t2", t1+
+#               "_returns":"t1_returns", t2+"_returns":"t2_returns"}, inplace=True)
+#     return df.dropna()
 
 
 def nix(val, lst):
@@ -47,7 +56,7 @@ stat_columns = [TableColumn(field=col, title=col) for col in stats.columns]
 data_table = DataTable(source=stats_source, columns=stat_columns,
                        width=350, height=350, index_position=None)
 
-# Plots
+# Set up Plots
 corr_tools = "pan, wheel_zoom, box_select,zoom_in,zoom_out,save, reset"
 tools = "pan, wheel_zoom, xbox_select,zoom_in,zoom_out,save, reset"
 
@@ -70,7 +79,6 @@ ts2.circle("Date", "t2", size=1, source=source,
            color=None, selection_color="firebrick")
 
 # callback
-
 
 def ticker1_change(attrname, old, new):
     ticker2.options = nix(new, DEFAULT_TICKERS)
