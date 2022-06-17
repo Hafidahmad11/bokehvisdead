@@ -25,7 +25,7 @@ def get_data(t1, t2):
     returns = df.pct_change().add_suffix("_returns")
     df = pd.concat([df, returns], axis=1)
     df.rename(columns={t1: "t1", t2: "t2", t1+
-              "_returns":"t1_returns", t2+"_returns":"t2_returns"})
+              "_returns":"t1_returns", t2+"_returns":"t2_returns"},inplace=True)
     return df.dropna()
 
 
