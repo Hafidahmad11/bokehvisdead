@@ -19,18 +19,14 @@ def load_ticker(tickers):
 
 
 def get_data(t1, t2):
-    tickers = [t1, t2]
-    df = load_ticker(tickers)
+    
+    d = load_ticker(DEFAULT_TICKERS)
+    df = d[[t1, t2]]
     returns = df.pct_change().add_suffix("_returns")
-    data = pd.concat([df, returns], axis=1)
-    return data
-#     d = load_ticker(DEFAULT_TICKERS)
-#     df = d[[t1, t2]]
-#     returns = df.pct_change().add_suffix("_returns")
-#     df = pd.concat([df, returns], axis=1)
-#     df.rename(columns={t1: "t1", t2: "t2", t1+
-#               "_returns":"t1_returns", t2+"_returns":"t2_returns"}, inplace=True)
-#     return df.dropna()
+    df = pd.concat([df, returns], axis=1)
+    df.rename(columns={t1: "t1", t2: "t2", t1+
+              "_returns":"t1_returns", t2+"_returns":"t2_returns"})
+    return df.dropna()
 
 
 def nix(val, lst):
