@@ -23,7 +23,7 @@ Saham-saham yang dipilih berasal dari berbagai sektor dan kapitalisasi pasar. Un
 
 
 ## Getting Started
-Berikut ini merupakan program yang menampilkan trend saham dari berbagai pasar saham berdasarkan data close dengan menggunakan Bokeh Library untuk memudahkan proses visualisasi data.
+Berikut ini merupakan program yang membandingkan trend saham dengan menampilkan trend saham dari berbagai pasar saham berdasarkan data close dengan menggunakan Bokeh Library untuk memudahkan proses visualisasi data.
 Kita disini menggunakan yfinance untuk download Financial data. yfinance adalah paket/package yang dirancang untuk mengunduh data stok historis dari Yahoo Finance.
 
 ## Prequisites
@@ -91,6 +91,9 @@ stat_columns = [TableColumn(field=col, title=col) for col in stats.columns]
 data_table = DataTable(source=stats_source, columns=stat_columns,
                        width=350, height=350, index_position=None)
 ```
+
+## Finance Trend Visualization
+
 Set Up Plots
 ```
 corr_tools = "pan, wheel_zoom, box_select,zoom_in,zoom_out,save, reset"
@@ -143,7 +146,7 @@ tabs = Tabs(tabs=[tab1, tab2])
 set_style(ts1)
 set_style(ts2)
 ```
-
+Code diatas bertujuan untuk membuat plot dengan menggunakan line dan circle dalam melakukannya. Untuk menjadikan plot lebih interaktif akan ditambahkan widget tab.
 
 
 Set Up callback
@@ -187,6 +190,14 @@ curdoc().add_root(layout)
 curdoc().title = "Stock Dashboard"
 ```
 
+## Hasil Output Circle dan Line plot
+
+![bokeh_plot (1)](https://user-images.githubusercontent.com/57959734/174258103-af0af117-b9c0-438d-a0f1-2737fd34c5e5.png)
+![bokeh_plot](https://user-images.githubusercontent.com/57959734/174257704-25250695-2cd0-4190-a018-c6f765b01d27.png)
+
+
+## Tampilan saat sudah di Deploy di Heroku
+![WhatsApp Image 2022-06-17 at 15 23 24](https://user-images.githubusercontent.com/57959734/174258332-0ab36ae7-c274-45eb-ad1a-f3b738cf66cb.jpeg)
 
 
 # THANKS
