@@ -1,10 +1,9 @@
 # Tugas Besar Visualisasi Data Menampilkan Visualisasi Interaktif
 
 Kelompok 4
-
+- Hafid Ahmad Adyatma ( 1301194235 )
 - Widi Sayyid Fadil Muhammad ( 1301190417 )
 - Azrina Fazira A ( 1301194241 )
-- Hafid Ahmad Adyatma ( 1301194235 )
 
 ## Visualization in Finance
 Saham merupakan salah satu instrumen pasar keuangan yang paling popular. Menerbitkan saham merupakan salah satu pilihan perusahaan ketika memutuskan untuk pendanaan perusahaan. Pada sisi lain, saham merupakan instrumen investasi yang banyak dipilih oleh para investor karena saham mampu memberikan tingkat keuntungan yang menarik.
